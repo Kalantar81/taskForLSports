@@ -1,0 +1,49 @@
+<div
+  class="body-view-container"
+  [style.width.px] = "screenWidth"
+  [style.height.px] = "screenHeight">
+    <div *ngIf="book" class="title-slot">
+      <h2>{{book.BookName}}</h2>
+    </div>
+    <div class="body-slot">
+      <div class="book-list-container">
+        <app-books-list></app-books-list>
+      </div>
+      <div *ngIf="book" class="book-cover-container">
+        <img src="{{book.CoverPhoto}}" style="width: 100%; height: 100%;"/>
+      </div>
+
+      <div *ngIf="book" class="add-book-container">
+        <div>
+          <mat-form-field >
+            <mat-label>Book Name</mat-label>
+            <input matInput  value="{{book.BookName}}">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field >
+            <mat-label>Author Name</mat-label>
+            <input matInput value="{{book.AutherName}}">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field >
+            <mat-label>Catalog Id</mat-label>
+            <input matInput value="{{book.CatalogNumber}}">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field >
+            <mat-label>Publish Date</mat-label>
+            <input matInput value="{{book.PublicationDate}}">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field >
+            <mat-label>Cover Url</mat-label>
+            <input matInput value="{{book.CoverPhoto}}">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+</div>

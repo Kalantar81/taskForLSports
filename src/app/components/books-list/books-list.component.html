@@ -1,0 +1,9 @@
+<div></div>
+<div *ngFor="let book of getBooksDataService.booksList$ | async; let i = index">
+    <div class="book-slot">
+        <div class="book">{{book.BookName}}, {{book.AutherName}}</div>
+        <div class="delete-btn" (click)="deleteBook(i)">
+            <img width="10" height="10" src="assets/icons/cancel.svg"/>
+        </div>
+    </div>
+</div>
